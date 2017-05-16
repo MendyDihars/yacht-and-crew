@@ -1,12 +1,6 @@
-<%= simple_form_for :index, html: {class: 'form-inline'}, url: yachts_path, method: :get do |f| %>
-<%= f.input :city, label: false, placeholder: 'city' %>
-<%= f.input :max_capacity, label: false, placeholder: 'travelers' %>
-<%= f.submit "Go", class: 'btn btn-primary'%>
+<%= simple_form_for :index, html: {class: 'form-inline'},
+    url: yachts_path, method: :get do |f| %>
+  <%= f.input :city, label: false, placeholder: 'city' %>
+  <%= f.input :max_capacity, label: false, placeholder: 'travelers' %>
+  <%= f.submit "Go", class: 'btn btn-primary'%>
 <% end %>
-
-<!-- <form class="form-inline" action="yachts">
-  <input type="text" name="city" placeholder="city" class="form-control">
-  <input type="text" name="max_capacity" placeholder="travellers" class="form-control">
-  <input type="submit" class="btn btn-primary">
-</form>
- -->

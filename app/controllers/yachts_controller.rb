@@ -3,7 +3,7 @@ class YachtsController < ApplicationController
 
   def index
     @yachts = Yacht.where("location LIKE ? AND max_capacity >= ? ",
-      "%#{search_params[:city]}%", search_params[:max_capacity])
+      "%#{search_params[:city].downcase}%", search_params[:max_capacity])
   end
 
   def new
