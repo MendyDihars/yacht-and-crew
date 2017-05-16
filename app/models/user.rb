@@ -27,4 +27,6 @@ class User < ApplicationRecord
     return user
   end
 
+  has_many :bookings
+  has_many :yachts, through: :booking
 end
