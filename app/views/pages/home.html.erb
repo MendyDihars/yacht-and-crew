@@ -3,11 +3,7 @@
     <div class="banner-content">
       <h1>Yacht and Crew</h1>
       <p>Book your yacht and have fun !</p>
-      <form class="form-inline" action="yacht/index">
-        <input type="text" name="city" placeholder="city" class="form-control">
-        <input type="text" name="max-capacity" placeholder="travellers" class="form-control">
-        <input type="submit" class="btn btn-primary">
-      </form>
+      <%= render 'shared/search_form' %>
     </div>
   </div>
 </div>
