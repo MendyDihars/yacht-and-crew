@@ -1,1 +1,27 @@
 // Your footer style
+.footer {
+  background: #282C2F;
+  color: white;
+  display: flex;
+  padding: 30px;
+
+  li {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: lighter;
+  }
+}
+.social li {
+  background: #33383B;
+  float: right;
+  font-size: 20px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: 10px;
+  text-align: center;
+  width: 35px;
+}
