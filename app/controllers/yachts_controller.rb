@@ -2,7 +2,8 @@ class YachtsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @yachts = Yacht.all
+    @yachts = Yacht.where("location LIKE ? AND max_capacity >= ? ",
+      "%#{search_params[:city].downcase}%", search_params[:max_capacity])
   end
 
   def new
@@ -16,6 +17,10 @@ class YachtsController < ApplicationController
 
   def yacht_params
      params.require(:yacht).permit(:name, :crew, :description, :address, :max_capacity)
+  end
+
+  def search_params
+    params.require(:index).permit(:city, :max_capacity)
   end
 
 end

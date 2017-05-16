@@ -1,0 +1,34 @@
+<div class="content-wrapper padded">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-8">
+        <div id="search_form">
+          <%= render "shared/search_form" %>
+        </div>
+        <div class="row">
+          <% @yachts.each do |yacht| %>
+            <div class="col-md-6">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://iyc.com/wp-content/uploads/2016/05/temptation-palmer-johnson-yacht-running.jpg');">
+              <div class="card-city"> ⚓ <%= yacht.location %></div>
+              <div class="card-description">
+                <h3><%= yacht.name.capitalize %></h3>
+                <span><%= yacht.max_capacity %> travelers</span>
+                <p><%= yacht.description %></p>
+              </div>
+              <%= link_to "", "#", class: "card-link" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+          <div class="col-md-4">
+            <div class="map">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
