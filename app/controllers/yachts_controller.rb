@@ -20,9 +20,7 @@ class YachtsController < ApplicationController
   end
 
   def search_params
-    params.permit(:city, :max_capacity)
+    params.require(:index).permit(:city, :max_capacity)
   end
-
-
 
 end
