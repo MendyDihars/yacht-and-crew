@@ -14,7 +14,18 @@
 @import "components/index";
 @import "pages/index";
 
-body {
-  position: relative;
-  padding-bottom: 130px;
+* {
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -130px;
+  /* Pad bottom by footer height */
+  padding: 0 0 130px;
 }
