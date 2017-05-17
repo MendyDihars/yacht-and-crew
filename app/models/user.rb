@@ -29,4 +29,7 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :yachts, through: :booking
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
