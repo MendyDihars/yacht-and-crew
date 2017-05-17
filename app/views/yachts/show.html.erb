@@ -1,0 +1,22 @@
+<div class="banner-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @yacht.photo.path %>');">
+
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="yacht-info">
+          <h2><%= @yacht.name %></h2>
+          <h4><%= @yacht.location.capitalize %> - <%= @yacht.max_capacity %> travelers</h4>
+          <h3>About this yacht</h3>
+          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+          <h3>Crew Members</h3>
+          <p><%= @yacht.crew %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+  </div>
+</div>
