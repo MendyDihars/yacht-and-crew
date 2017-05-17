@@ -15,6 +15,10 @@ class YachtsController < ApplicationController
     @yacht.save ? redirect_to(@yacht) : render(:new)
   end
 
+  def show
+    @yacht = Yacht.find(params[:id])
+  end
+
   private
 
   def yacht_params
