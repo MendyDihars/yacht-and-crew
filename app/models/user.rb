@@ -27,4 +27,10 @@ class User < ApplicationRecord
     return user
   end
 
+  has_many :bookings
+  has_many :rented_yachts, through: :bookings, source: :yacht
+  has_many :yachts, foreign_key: "owner_id", class_name: "Yacht"
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
