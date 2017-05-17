@@ -6,6 +6,10 @@ class YachtsController < ApplicationController
       "%#{search_params[:city].downcase}%", search_params[:max_capacity])
   end
 
+  def show
+    @yacht = Yacht.find(params[:id])
+  end
+
   def new
     @yacht = Yacht.new
   end
@@ -15,8 +19,10 @@ class YachtsController < ApplicationController
     @yacht.save ? redirect_to(@yacht) : render(:new)
   end
 
+  private
+
   def yacht_params
-     params.require(:yacht).permit(:name, :crew, :description, :address, :max_capacity)
+     params.require(:yacht).permit(:name, :crew, :description, :address, :max_capacity, :photo)
   end
 
   def search_params

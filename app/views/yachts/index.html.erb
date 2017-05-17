@@ -10,21 +10,21 @@
         <div class="row">
           <% @yachts.each do |yacht| %>
             <div class="col-md-6">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://iyc.com/wp-content/uploads/2016/05/temptation-palmer-johnson-yacht-running.jpg');">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path yacht.photo.path %>);">
               <div class="card-city"> ⚓ <%= yacht.location %></div>
               <div class="card-description">
                 <h3><%= yacht.name.capitalize %></h3>
                 <span><%= yacht.max_capacity %> travelers</span>
                 <p><%= yacht.description %></p>
               </div>
-              <%= link_to "", "#", class: "card-link" %>
+              <%= link_to "", yacht_path(yacht), class: "card-link" %>
               </div>
             </div>
           <% end %>
         </div>
           <div class="col-md-4">
             <div class="map">
-
+            <!-- FUTUR MAP  -->
             </div>
           </div>
         </div>
