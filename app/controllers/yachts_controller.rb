@@ -6,6 +6,10 @@ class YachtsController < ApplicationController
       "%#{search_params[:city].downcase}%", search_params[:max_capacity])
   end
 
+  def show
+    @yacht = Yacht.find(params[:id])
+  end
+
   def new
     @yacht = Yacht.new
   end
@@ -13,10 +17,6 @@ class YachtsController < ApplicationController
   def create
     @yacht = Yacht.new(yacht_params)
     @yacht.save ? redirect_to(@yacht) : render(:new)
-  end
-
-  def show
-    @yacht = Yacht.find(params[:id])
   end
 
   private
