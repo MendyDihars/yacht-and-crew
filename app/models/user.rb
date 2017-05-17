@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
@@ -30,6 +28,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :rented_yachts, through: :bookings, source: :yacht
   has_many :yachts, foreign_key: "owner_id", class_name: "Yacht"
+  has_attachment :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
