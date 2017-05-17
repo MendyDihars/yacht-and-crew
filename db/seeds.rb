@@ -15,7 +15,7 @@ photos_url = [
   "http://i.dailymail.co.uk/i/pix/2012/10/08/article-2214718-0007818C00000258-180_634x455.jpg"
 ]
 n = 0
-puts "creating yachts"
+puts "creating  arcachon yachts"
 10.times do
   yacht = User.last.yachts.new
   yacht.name = Faker::Ancient.hero
@@ -26,5 +26,22 @@ puts "creating yachts"
   n += 1
   yacht.save
   puts ". "
+end
+
+puts 'Urls SHUFFLELING'
+photos_url.shuffle!
+
+puts "creating  cannes yachts"
+n = 0
+10.times do
+  yacht = User.last.yachts.new
+  yacht.name = Faker::Ancient.hero
+  yacht.crew = "#{Faker::Name.name_with_middle}, #{Faker::Name.name}, #{Faker::LordOfTheRings.character}, #{Faker::GameOfThrones.character}, #{Faker::Pokemon.name}"
+  yacht.location = "cannes"
+  yacht.max_capacity = rand(5..10)
+  yacht.photo_url = photos_url[n]
+  n += 1
+  yacht.save
+  puts "🛥 "
 end
 puts " Lets navigate ⚓ "
