@@ -2,7 +2,6 @@ $(document).ready(function() {
   $('#unique_price').hide();
   setInterval(function() {
     var price = $("#unique_price").text();
-    console.log(price);
 
     var checkin = $('#booking_checkin').val();
     var checkout = $('#booking_checkout').val();
