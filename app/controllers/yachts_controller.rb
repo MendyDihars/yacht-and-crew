@@ -4,15 +4,6 @@ class YachtsController < ApplicationController
   def index
     @yachts = Yacht.near(search_params[:city].downcase)
     @yachts = @yachts.where("max_capacity >= ?", search_params[:max_capacity])
-    #@yachts = Yacht.where.not(latitude: nil, longitude: nil)
-
-
-    #@yachts = Yacht.near(search_params[:city].downcase)
-    #@yachts_2 =
-
-    #@yachts = Yacht.where("location LIKE ? AND max_capacity >= ? ",
-     # "%#{search_params[:city].downcase}%", search_params[:max_capacity])
-
 
     @hash = Gmaps4rails.build_markers(@yachts) do |yacht, marker|
       marker.lat yacht.latitude
