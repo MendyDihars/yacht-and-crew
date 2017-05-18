@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @yacht = Yacht.find(params[:yacht_id])
-    review = @yacht.reviews.create(review_params)
+    review = @yacht.reviews.new(review_params)
     if review.save
       review.user_id = current_user.id
       review.save
