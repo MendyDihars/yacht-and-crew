@@ -1,6 +1,7 @@
 class Yacht < ApplicationRecord
   has_many    :bookings
   has_many    :users, through: :booking
+  has_many    :reviews
   belongs_to  :owner, class_name: 'User', foreign_key: 'owner_id'
   has_attachment :photo
   geocoded_by :location
