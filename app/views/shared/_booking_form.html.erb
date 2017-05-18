@@ -1,8 +1,13 @@
-<div>
-  <%= simple_form_for [@yacht, @booking] do |f| %>
-    <%= f.input :guest_number %>
-    <%= f.input :checkin %>
-    <%= f.input :checkout %>
-    <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+<div class="booking-form">
+  <div>
+    <%= simple_form_for [@yacht, @booking] do |f| %>
+      <%= f.input :guest_number, collection: (1..20).to_a, default: 1, label: "Number of peoples"  %>
+      <%= f.input :checkin, label: "From"%>
+      <%= f.input :checkout, label: "As" %>
+      <div class="text-center">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
