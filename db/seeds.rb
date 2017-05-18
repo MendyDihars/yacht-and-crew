@@ -1,10 +1,10 @@
+puts "cleaning database"
+Booking.destroy_all
+Review.destroy_all
+Yacht.destroy_all
 User.destroy_all
 
 user = User.create(first_name: "Apops", last_name: "Sentucq", email: "apops@gmail.com", password: "123456")
-
-puts "cleaning yachts"
-Yacht.destroy_all
-
 
 photos_url = [
   "https://static1.squarespace.com/static/58089b7846c3c44d6e2ac2c0/t/580f789ce6f2e1af3c2f0d49/1477408926813/PJ170-mail_Page_04.jpg?format=2500w",
@@ -30,7 +30,7 @@ puts "creating  arcachon yachts"
   yacht.photo_url = photos_url[n]
   n += 1
   yacht.save
-  puts "🏄"
+  print "🏄 "
 end
 
 puts 'Urls SHUFFLELING'
@@ -48,6 +48,6 @@ n = 0
   yacht.photo_url = photos_url[n]
   n += 1
   yacht.save
-  puts "🏄"
+  print "🏄 "
 end
 puts " Lets navigate ⚓ "
