@@ -22,11 +22,26 @@
             </div>
           <% end %>
         </div>
-          <div class="col-md-4">
-            <div class="map">
-            <!-- FUTUR MAP  -->
-            </div>
-          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="map" style="height: 600px;"></div>
+            <% content_for(:after_js) do %>
+              <script>
+                $(document).ready(function() {
+                  var handler = Gmaps.build('Google');
+                  handler.buildMap({ internal: { id: 'map' } }, function() {
+                    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                    handler.bounds.extendWith(markers);
+                    handler.fitMapToBounds();
+                    if (markers.length == 0) {
+                      handler.getMap().setZoom(2);
+                    } else if (markers.length == 1) {
+                      handler.getMap().setZoom(10);
+                    }
+                  });
+                });
+              </script>
+            <% end %>
         </div>
       </div>
     </div>
