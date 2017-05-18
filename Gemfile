@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 ruby '2.3.3'
 
 gem 'rails', '5.0.3'
@@ -23,6 +24,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+
+
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
@@ -34,4 +38,9 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+gem "geocoder"
+gem "gmaps4rails"
 
+source 'https://rails-assets.org' do
+ gem "rails-assets-underscore"
+end
