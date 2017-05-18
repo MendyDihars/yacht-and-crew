@@ -1,0 +1,8 @@
+<div>
+  <%= simple_form_for [@yacht, @booking] do |f| %>
+    <%= f.input :guest_number %>
+    <%= f.input :checkin %>
+    <%= f.input :checkout %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
