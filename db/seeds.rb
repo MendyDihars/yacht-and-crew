@@ -1,10 +1,10 @@
+puts "cleaning database"
+Booking.destroy_all
+Review.destroy_all
+Yacht.destroy_all
 User.destroy_all
 
 user = User.create(first_name: "Apops", last_name: "Sentucq", email: "apops@gmail.com", password: "123456")
-
-puts "cleaning yachts"
-Yacht.destroy_all
-
 
 photos_url = [
   "https://static1.squarespace.com/static/58089b7846c3c44d6e2ac2c0/t/580f789ce6f2e1af3c2f0d49/1477408926813/PJ170-mail_Page_04.jpg?format=2500w",
@@ -26,10 +26,11 @@ puts "creating  arcachon yachts"
   yacht.crew = "#{Faker::Name.name_with_middle}, #{Faker::Name.name}, #{Faker::LordOfTheRings.character}, #{Faker::GameOfThrones.character}, #{Faker::Pokemon.name}"
   yacht.location = ["14 Quai Goslar, Arcachon", "6 Quai Goslar, Arcachon", "53 Boulevard de la Plage, Arcachon", "2 rue Hovy, Arcachon", "6 rue des Marins, Arcachon"].sample
   yacht.max_capacity = rand(5..10)
+  yacht.day_price = [400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000].sample
   yacht.photo_url = photos_url[n]
   n += 1
   yacht.save
-  puts "🏄"
+  print "🏄 "
 end
 
 puts 'Urls SHUFFLELING'
@@ -43,9 +44,10 @@ n = 0
   yacht.crew = "#{Faker::Name.name_with_middle}, #{Faker::Name.name}, #{Faker::LordOfTheRings.character}, #{Faker::GameOfThrones.character}, #{Faker::Pokemon.name}"
   yacht.location = ["Pointe Croisette, Cannes", "Quai Numéro 1, Cannes", "1 Jetée Albert Edouard, Cannes", "2 Boulevard du Midi Jean Hibert, Cannes"].sample
   yacht.max_capacity = rand(5..10)
+  yacht.day_price = [400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000].sample
   yacht.photo_url = photos_url[n]
   n += 1
   yacht.save
-  puts "🏄"
+  print "🏄 "
 end
 puts " Lets navigate ⚓ "
