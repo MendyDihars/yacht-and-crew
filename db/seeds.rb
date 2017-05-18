@@ -26,6 +26,7 @@ puts "creating  arcachon yachts"
   yacht.crew = "#{Faker::Name.name_with_middle}, #{Faker::Name.name}, #{Faker::LordOfTheRings.character}, #{Faker::GameOfThrones.character}, #{Faker::Pokemon.name}"
   yacht.location = ["14 Quai Goslar, Arcachon", "6 Quai Goslar, Arcachon", "53 Boulevard de la Plage, Arcachon", "2 rue Hovy, Arcachon", "6 rue des Marins, Arcachon"].sample
   yacht.max_capacity = rand(5..10)
+  yacht.day_price = [400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000].sample
   yacht.photo_url = photos_url[n]
   n += 1
   yacht.save
@@ -43,6 +44,7 @@ n = 0
   yacht.crew = "#{Faker::Name.name_with_middle}, #{Faker::Name.name}, #{Faker::LordOfTheRings.character}, #{Faker::GameOfThrones.character}, #{Faker::Pokemon.name}"
   yacht.location = ["Pointe Croisette, Cannes", "Quai Numéro 1, Cannes", "1 Jetée Albert Edouard, Cannes", "2 Boulevard du Midi Jean Hibert, Cannes"].sample
   yacht.max_capacity = rand(5..10)
+  yacht.day_price = [400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000].sample
   yacht.photo_url = photos_url[n]
   n += 1
   yacht.save
