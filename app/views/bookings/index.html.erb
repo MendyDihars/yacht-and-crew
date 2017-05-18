@@ -1,0 +1,16 @@
+<div class="wrapper-bookings">
+  <div class="container">
+    <div class="row">
+      <% @bookings.each do |book| %>
+        <div class="col-sm-6">
+          <div class="booking">
+            <h2><%= Yacht.find(book.yacht_id).name %></h2>
+            <hr>
+            <p><%= book.checkin.strftime('%a %B %d %Y') %></p>
+            <p><%= book.checkout.strftime('%a %B %d %Y') %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
