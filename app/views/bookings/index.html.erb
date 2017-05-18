@@ -2,12 +2,14 @@
   <div class="container">
     <div class="row">
       <% @bookings.each do |book| %>
+      <% yacht = Yacht.find(book.yacht_id) %>
         <div class="col-sm-6">
           <div class="booking">
-            <h2><%= Yacht.find(book.yacht_id).name %></h2>
+            <h2><%= yacht.name %></h2>
             <hr>
             <p><%= book.checkin.strftime('%a %B %d %Y') %></p>
             <p><%= book.checkout.strftime('%a %B %d %Y') %></p>
+            <p>PRICE = <%= yacht.day_price * ((book.checkout - book.checkin).to_i + 1) %> €</p>
           </div>
         </div>
       <% end %>
