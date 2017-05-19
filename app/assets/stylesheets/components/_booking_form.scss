@@ -4,3 +4,14 @@
   padding: 10px;
   border-radius: 5px;
 }
+#price {
+  padding: 5px;
+  margin: 20px 0;
+  display: block;
+  letter-spacing: 1.3px;
+  color: $brand_primary;
+  font-weight: bold;
+}
+#unique_price {
+  display: none;
+}

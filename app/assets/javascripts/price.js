@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $('#unique_price').hide();
   setInterval(function() {
     var price = $("#unique_price").text();
 
@@ -16,10 +15,10 @@ $(document).ready(function() {
     var amount = (days + 1) * price;
 
     if (amount >= 0) {
-      $('#price').text(amount + ' 💲');
+      $('#price').text(amount + ' €');
     }
     else {
-      $('#price').text('💲');
+      $('#price').html('<i class="fa fa-anchor faa-pulse animated fa-2x"></i>');
     };
   }, 1000);
 });
