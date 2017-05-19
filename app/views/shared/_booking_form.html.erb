@@ -3,7 +3,7 @@
   <div>
     <%= simple_form_for [@yacht, @booking] do |f| %>
       <span id="unique_price"><%= @yacht.day_price %></span>
-      <%= f.input :guest_number, collection: (1..20).to_a, default: 1, label: "Travelers", id: 'travelers'  %>
+      <%= f.input :guest_number, collection: (1..@yacht.max_capacity).to_a, default: 1, label: "Travelers", id: 'travelers'  %>
       <%= f.input :checkin, label: "From", html5: true %>
       <%= f.input :checkout, label: "To", html5: true %>
       <div class="text-center"><span id='price'></span></div>
