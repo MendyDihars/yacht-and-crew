@@ -8,9 +8,8 @@ class ReviewsController < ApplicationController
   def create
     @yacht = Yacht.find(params[:yacht_id])
     review = @yacht.reviews.new(review_params)
+    review.user_id = current_user.id
     if review.save
-      review.user_id = current_user.id
-      review.save
       redirect_to yacht_path(@yacht)
     else
       render :new
