@@ -57,10 +57,11 @@
   font-size: 14px;
 }
 .navbar-wagon-button:hover {
-  color: white;
+  color: $brand_primary;
+  border: 1px solid $brand_primary;
   text-decoration: none;
-  color: #333;
   background: $main_color;
+  padding: 0 19px;
 }
 
 .navbar-wagon-search {
