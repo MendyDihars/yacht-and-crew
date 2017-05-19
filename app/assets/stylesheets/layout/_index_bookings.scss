@@ -1,0 +1,35 @@
+.wrapper-bookings {
+  padding: 30px;
+}
+.booking {
+  border: 2px solid grey;
+  border-right: 2px dashed grey;
+  border-left: 2px dashed grey;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  width: 400px;
+  .ticket-number {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 2px 2px grey;
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+    left: -10px;
+    padding: 1.5px 1.5px 1.5px 6px;
+    position: absolute;
+    top: 5px;
+  }
+  .ticket-date {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  .ticket-person {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+  }
+}

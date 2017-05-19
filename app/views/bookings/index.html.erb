@@ -1,15 +1,22 @@
 <div class="wrapper-bookings">
   <div class="container">
     <div class="row">
-      <% @bookings.each do |book| %>
+      <% @bookings.each_with_index do |book, index| %>
       <% yacht = Yacht.find(book.yacht_id) %>
-        <div class="col-sm-6">
+      <% days = (book.checkout - book.checkin).to_i + 1 %>
+        <div class="col-xs-12">
           <div class="booking">
-            <h2><%= yacht.name %></h2>
-            <hr>
-            <p><%= book.checkin.strftime('%a %B %d %Y') %></p>
-            <p><%= book.checkout.strftime('%a %B %d %Y') %></p>
-            <p>PRICE = <%= yacht.day_price * ((book.checkout - book.checkin).to_i + 1) %> €</p>
+            <span class='ticket-number'>#0<%= index + 1 %></span>
+            <span class='ticket-date'><%= book.checkin.strftime('%B %d, %Y') %> - <%= book.checkout.strftime('%B %d, %Y') %></span><br>
+            <div class="infos">
+              <% book.guest_number.times do %>
+                <i class="fa fa-user" aria-hidden="true"></i>
+              <% end %>
+              Aboard the <%= yacht.name %><br>
+            </div>
+            <div class="price">
+              <p>$<%= yacht.day_price * days %></p>
+            </div>
           </div>
         </div>
       <% end %>
