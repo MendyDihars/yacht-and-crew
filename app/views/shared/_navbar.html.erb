@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
 
   <%= link_to root_path do %>
-    <%= image_tag "http://paxgalaxy.com/WP/wp-content/uploads/2012/05/bateau-papier_600.png", class: "navbar-wagon-brand" %>
+    <%= image_tag "logo_w.png", class: "navbar-wagon-brand" %>
   <% end %>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -10,13 +10,6 @@
     <%= link_to "Team", "#", class: 'navbar-wagon-item navbar-wagon-link'  %>
 
     <% if user_signed_in? %>
-
-      <%= link_to "#", class:"navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
 
       <div class="navbar-wagon-item">
         <div class="dropdown">
