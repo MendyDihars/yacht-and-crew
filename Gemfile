@@ -23,7 +23,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
-
+gem 'rails-assets-font-awesome-animation', source: 'https://rails-assets.org'
 
 
 

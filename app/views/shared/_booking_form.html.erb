@@ -6,7 +6,7 @@
       <%= f.input :guest_number, collection: (1..20).to_a, default: 1, label: "Travelers", id: 'travelers'  %>
       <%= f.input :checkin, label: "From", html5: true %>
       <%= f.input :checkout, label: "To", html5: true %>
-      <span id='price'></span>
+      <div class="text-center"><span id='price'></span></div>
       <div class="text-center">
         <%= f.submit class: 'btn btn-primary' %>
       </div>
