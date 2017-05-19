@@ -1,22 +1,28 @@
+<h2 class="text-center">My Bookings</h2>
 <div class="wrapper-bookings">
   <div class="container">
     <div class="row">
       <% @bookings.each_with_index do |book, index| %>
       <% yacht = Yacht.find(book.yacht_id) %>
       <% days = (book.checkout - book.checkin).to_i + 1 %>
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-offset-4 cl-sm-4">
           <div class="booking">
             <span class='ticket-number'>#0<%= index + 1 %></span>
             <span class='ticket-date'><%= book.checkin.strftime('%B %d, %Y') %> - <%= book.checkout.strftime('%B %d, %Y') %></span><br>
-            <div class="infos">
+            <span class="ticket-person">
               <% book.guest_number.times do %>
                 <i class="fa fa-user" aria-hidden="true"></i>
               <% end %>
-              Aboard the <%= yacht.name %><br>
-            </div>
-            <div class="price">
+            </span>
+              <span class="ticket-yacht"><%= yacht.name %></span>
+            <div class="ticket-price">
               <p>$<%= yacht.day_price * days %></p>
             </div>
+            <% if date?(book.checkout) %>
+              <%= link_to "Add a comment", new_yacht_review_path(yacht), class: "ticket-btn" %>
+            <% else %>
+              <span class="ticket-none">You can't add a comment now</span>
+            <% end %>
           </div>
         </div>
       <% end %>

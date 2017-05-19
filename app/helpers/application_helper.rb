@@ -8,4 +8,8 @@ module ApplicationHelper
       "http://placehold.it/30x30"
     end
   end
+
+  def date?(date)
+    date <= Date.today
+  end
 end
