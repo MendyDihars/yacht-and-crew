@@ -9,7 +9,7 @@
         </div>
         <div class="row">
         <% if @yachts.size == 0 %>
-          <p class="text-center alert alert-info"> We are sorry, we have not yachts avalaible in the request location. You can use our service in the next ports: Arcachon et Cannes (FR)</p>
+          <p class="text-center alert alert-info"> We are sorry, we have not yachts avalaible in the requested location. You can use our service in the next ports: Arcachon et Cannes (FR)</p>
           <div style="width:100%;height:0;padding-bottom:54%;position:relative;"><iframe src="https://giphy.com/embed/3ohA2ZD9EkeK2AyfdK" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
         <% else %>
           <% @yachts.each do |yacht| %>
@@ -29,6 +29,7 @@
         </div>
         </div>
         <div class="col-md-4">
+          <div class="map-wrapper">
           <div id="map" style="height: 600px;"></div>
             <% content_for(:after_js) do %>
               <script>
@@ -47,6 +48,7 @@
                 });
               </script>
             <% end %>
+        </div>
         </div>
       </div>
     </div>
