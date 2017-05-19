@@ -12,6 +12,24 @@
           <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
           <h3>Crew Members</h3>
           <p><%= @yacht.crew %></p>
+          <div class="padded">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Reviews</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @yacht.reviews.each do |review| %>
+                <tr>
+                  <td><%= review.user.first_name %></td>
+                  <td><%= review.content %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
