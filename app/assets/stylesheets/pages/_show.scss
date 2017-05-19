@@ -1,15 +1,21 @@
 .wrapper {
   padding-top: 50px;
   padding-bottom: 50px;
-  h3 {
-    font-size: 24px;
+
+  h2 {
+  font-size: 50px;
+  font-weight: 700;
+}
+  h3, th {
+    font-size: 20px;
+    font-weight: 600;
   }
   h4 {
     font-size: 17px;
     font-weight: lighter;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: lighter;
   }
 }
